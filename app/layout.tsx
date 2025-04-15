@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Fakecombank",
   description: "Ngân hàng số đầu hàng Việt Nam.",
   icons: {
-    icon: '/icons/logo.svg'
+    icon: '/icons/logo.png'
   }
 };
 
