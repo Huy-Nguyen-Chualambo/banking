@@ -92,7 +92,7 @@ const AuthForm = ({ type }: { type: string }) => {
               height={34}
               alt="Horizon logo"
             />
-            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Horizon</h1>
+            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Fakecombank</h1>
           </Link>
 
           <div className="flex flex-col gap-1 md:gap-3">
@@ -100,13 +100,13 @@ const AuthForm = ({ type }: { type: string }) => {
               {user 
                 ? 'Link Account'
                 : type === 'sign-in'
-                  ? 'Sign In'
-                  : 'Sign Up'
+                  ? 'Đăng nhập'
+                  : 'Đăng ký'
               }
               <p className="text-16 font-normal text-gray-600">
                 {user 
-                  ? 'Link your account to get started'
-                  : 'Please enter your details'
+                  ? 'Liên kết tài khoản để bắt đầu'
+                  : 'Nhập thông tin tài khoản của bạn'
                 }
               </p>  
             </h1>
@@ -123,25 +123,25 @@ const AuthForm = ({ type }: { type: string }) => {
               {type === 'sign-up' && (
                 <>
                   <div className="flex gap-4">
-                    <CustomInput control={form.control} name='firstName' label="First Name" placeholder='Enter your first name' />
-                    <CustomInput control={form.control} name='lastName' label="Last Name" placeholder='Enter your first name' />
+                    <CustomInput control={form.control} name='firstName' label="Tên" placeholder='Nhập tên' />
+                    <CustomInput control={form.control} name='lastName' label="Họ và tên đệm" placeholder='Nhập họ và tên đệm' />
                   </div>
-                  <CustomInput control={form.control} name='address1' label="Address" placeholder='Enter your specific address' />
-                  <CustomInput control={form.control} name='city' label="City" placeholder='Enter your city' />
+                  <CustomInput control={form.control} name='address1' label="Địa chỉ" placeholder='Nhập địa chỉ' />
+                  <CustomInput control={form.control} name='city' label="Quận/Huyện" placeholder='Nhập quận/huyện' />
                   <div className="flex gap-4">
-                    <CustomInput control={form.control} name='state' label="State" placeholder='Example: NY' />
-                    <CustomInput control={form.control} name='postalCode' label="Postal Code" placeholder='Example: 11101' />
+                    <CustomInput control={form.control} name='state' label="Tỉnh/Thành phố" placeholder='Nhập Tỉnh/Thành Phố' />
+                    <CustomInput control={form.control} name='postalCode' label="Mã bưu điện" placeholder='Nhập mã bưu điện' />
                   </div>
                   <div className="flex gap-4">
-                    <CustomInput control={form.control} name='dateOfBirth' label="Date of Birth" placeholder='YYYY-MM-DD' />
-                    <CustomInput control={form.control} name='ssn' label="SSN" placeholder='Example: 1234' />
+                    <CustomInput control={form.control} name='dateOfBirth' label="Sinh nhật" placeholder='VD: 2000-12-31' />
+                    <CustomInput control={form.control} name='ssn' label="Mã định danh" placeholder='CMND/CCCD/Passport' />
                   </div>
                 </>
               )}
 
-              <CustomInput control={form.control} name='email' label="Email" placeholder='Enter your email' />
+              <CustomInput control={form.control} name='email' label="Email" placeholder='Nhập email của bạn' />
 
-              <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password' />
+              <CustomInput control={form.control} name='password' label="Mật khẩu" placeholder='Nhập mật khẩu' />
 
               <div className="flex flex-col gap-4">
                 <Button type="submit" disabled={isLoading} className="form-btn">
@@ -151,7 +151,7 @@ const AuthForm = ({ type }: { type: string }) => {
                       Loading...
                     </>
                   ) : type === 'sign-in' 
-                    ? 'Sign In' : 'Sign Up'}
+                    ? 'Đăng nhập' : 'Đăng ký'}
                 </Button>
               </div>
             </form>
@@ -160,11 +160,11 @@ const AuthForm = ({ type }: { type: string }) => {
           <footer className="flex justify-center gap-1">
             <p className="text-14 font-normal text-gray-600">
               {type === 'sign-in'
-              ? "Don't have an account?"
-              : "Already have an account?"}
+              ? "Chưa có tài khoản?"
+              : "Đã có tài khoản?"}
             </p>
             <Link href={type === 'sign-in' ? '/sign-up' : '/sign-in'} className="form-link">
-              {type === 'sign-in' ? 'Sign up' : 'Sign in'}
+              {type === 'sign-in' ? 'Đăng ký' : 'Đăng nhập'}
             </Link>
           </footer>
         </>
